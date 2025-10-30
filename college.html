@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Management System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f0f4f8;
+    }
+
+    header {
+      background-color: #004d99;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #003366;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    footer {
+      background-color: #004d99;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>College Management System</h1>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showSection('students')">Students</a>
+    <a href="#" onclick="showSection('courses')">Courses</a>
+    <a href="#" onclick="showSection('faculty')">Faculty</a>
+    <a href="#" onclick="showSection('about')">About</a>
+  </nav>
+
+  <div class="container">
+    <section id="students" class="active">
+      <h2>Student Information</h2>
+      <table>
+        <tr>
+          <th>Roll No</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Year</th>
+        </tr>
+        <tr>
+          <td>101</td>
+          <td>Rahul Sharma</td>
+          <td>Computer Science</td>
+          <td>3rd</td>
+        </tr>
+        <tr>
+          <td>102</td>
+          <td>Priya Patel</td>
+          <td>Electronics</td>
+          <td>2nd</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="courses">
+      <h2>Courses Offered</h2>
+      <table>
+        <tr>
+          <th>Course ID</th>
+          <th>Course Name</th>
+          <th>Credits</th>
+        </tr>
+        <tr>
+          <td>CS101</td>
+          <td>Data Structures</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>EE205</td>
+          <td>Digital Electronics</td>
+          <td>3</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="faculty">
+      <h2>Faculty Details</h2>
+      <table>
+        <tr>
+          <th>Faculty ID</th>
+          <th>Name</th>
+          <th>Department</th>
+        </tr>
+        <tr>
+          <td>F001</td>
+          <td>Dr. Neha Verma</td>
+          <td>Computer Science</td>
+        </tr>
+        <tr>
+          <td>F002</td>
+          <td>Dr. Rajesh Kumar</td>
+          <td>Mechanical</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="about">
+      <h2>About This System</h2>
+      <p>
+        This is a simple front-end demo of a College Management System.
+        You can extend it with backend integration (like PHP/MySQL or Node.js) 
+        to handle real data such as student records, course enrollment, and faculty details.
+      </p>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 College Management System | Developed by Sonan</p>
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
